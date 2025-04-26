@@ -1,6 +1,10 @@
 Nutrilite
 Group Members-Mrinal Meha,Nidhi Kumari, Chetan Parmar
+
+
 Project description-This project improves the dining experience by addressing long queues, real-time info gaps, and delivery delays.
+
+
 It uses features like loyalty programs, push notifications, and feedback systems to enhance customer engagement and restaurant efficiency, pre orders & orders, and communication for a seamless, personalized experience.
 
 # Technologies Used
