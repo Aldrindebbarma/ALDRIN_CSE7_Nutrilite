@@ -53,6 +53,6 @@ Clone this repository.
 
 Run npm ci to install the dependencies.
 
-Run npm start to start the badge server and the frontend dev server.
+Run npm run dev to start the badge server and the frontend dev server.
 
-Open http://localhost:3000/ to view the frontend.
+Open http://localhost:5173/ to view the frontend.
