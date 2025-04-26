@@ -1,8 +1,8 @@
 Nutrilite
-Group Members-Mrinal Meha,Nidhi Kumari, Chetan Parmar
+Group Members: Aldrin Debbarma, Mrinal Meha, Nidhi Kumari, Chetan Parmar
 
 
-Project description-This project improves the dining experience by addressing long queues, real-time info gaps, and delivery delays.
+Project: This project improves the dining experience by addressing long queues, real-time info gaps, and delivery delays.
 
 
 It uses features like loyalty programs, push notifications, and feedback systems to enhance customer engagement and restaurant efficiency, pre orders & orders, and communication for a seamless, personalized experience.
@@ -29,7 +29,7 @@ bcrypt for password hashing
 
 dotenv for environment variables
 
-CORS, helmet, express-validator for security
+CORS, helmet, and express-validator for security
 
  #### Database:
 PostgreSQL (hosted locally, or via services like Railway, Supabase, or Render)
@@ -45,10 +45,14 @@ Git + GitHub (for version control)
 
 
 
-###### Steps to Run/ Execute the Project 
+# Steps to Run/ Execute the Project 
 
 Install Node 20 or later. You can use the package manager of your choice. Tests need to pass in Node 20 and 22.
+
 Clone this repository.
+
 Run npm ci to install the dependencies.
+
 Run npm start to start the badge server and the frontend dev server.
+
 Open http://localhost:3000/ to view the frontend.
