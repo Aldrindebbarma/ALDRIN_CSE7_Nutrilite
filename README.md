@@ -3,9 +3,9 @@ Group Members-Mrinal Meha,Nidhi Kumari, Chetan Parmar
 Project description-This project improves the dining experience by addressing long queues, real-time info gaps, and delivery delays.
 It uses features like loyalty programs, push notifications, and feedback systems to enhance customer engagement and restaurant efficiency, pre orders & orders, and communication for a seamless, personalized experience.
 
-###### Technologies Used
+# Technologies Used
 
-1. Frontend:
+#### Frontend:
 React.js (or Next.js for SSR)
 
 Tailwind CSS (for styling)
@@ -14,7 +14,7 @@ Axios or Fetch (to call APIs)
 
 Vite (for fast development in React)
 
-2. Backend:
+#### Backend:
 Node.js + Express.js
 
 Sequelize or Prisma (ORM for PostgreSQL)
@@ -27,10 +27,10 @@ dotenv for environment variables
 
 CORS, helmet, express-validator for security
 
- 3.Database:
+ #### Database:
 PostgreSQL (hosted locally, or via services like Railway, Supabase, or Render)
 
-4. Dev Tools:
+#### Dev Tools:
 VS Code
 
 Postman (for testing APIs)
