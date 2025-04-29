@@ -30,23 +30,20 @@ export default function Services() {
   ];
 
   const handleAddToCart = (item) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find((cartItem) => cartItem.id === item.id);
-      if (existingItem) {
-        return prevItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
-        );
-      } else {
-        return [...prevItems, { ...item, quantity: 1 }];
-      }
-    });
+    const updatedCartItems = cartItems.map((cartItem) =>
+      cartItem.id === item.id
+        ? { ...cartItem, quantity: cartItem.quantity + 1 }
+        : cartItem
+    );
 
-    // Delay navigate to ensure state update
-    setTimeout(() => {
-      navigate('/cart', { state: { cartItems } });
-    }, 0);
+    if (!cartItems.some((cartItem) => cartItem.id === item.id)) {
+      updatedCartItems.push({ ...item, quantity: 1 });
+    }
+
+    setCartItems(updatedCartItems);
+
+    // Navigate to the cart with updated items
+    navigate('/cart', { state: { cartItems: updatedCartItems } });
   };
 
   return (

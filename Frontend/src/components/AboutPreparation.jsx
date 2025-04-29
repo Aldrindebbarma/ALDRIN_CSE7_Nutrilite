@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 export default function AboutPreparation() {
   const images = [
-    { src: '/Images/Food/Fing Salad.jpg', alt: 'Farm to Table' },
-    { src: '/Images/Food/Rice paddy.jpg', alt: 'Rice Paddy' },
-    { src: '/Images/Food/Haat Bazar Main.jpg', alt: 'Haat Bazar Main' },
+    { src: '/Images/Food/Salad.jpg', alt: 'Farm to Table' },
+    { src: '/Images/Food/Rice.jpg', alt: 'Rice Paddy' },
+    { src: '/Images/Food/Market.jpg', alt: 'Haat Bazar Main' },
     { src: '/Images/Food/Pizza Base.jpg', alt: 'Pizza Base' },
-    { src: '/Images/Food/Pappardlle with roasted Aubergine.jpg', alt: 'To the Table' },
+    { src: '/Images/Food/Pasta.jpg', alt: 'To the Table' },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -15,15 +15,28 @@ export default function AboutPreparation() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // 5000ms = 5 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <div className="bg-gray-100 text-gray-800">
-      {/* Hero Section with Slideshow */}
+      {/* Static Hero Section */}
       <div
-        className="relative bg-cover bg-center h-[70vh] text-white flex items-center justify-center transition-all duration-1000"
+        className="relative bg-cover bg-center h-screen text-white flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/Images/Food/Farm.jpg')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+        <h1 className="relative text-6xl font-bold uppercase tracking-wide text-center">
+          The Farm
+        </h1>
+      </div>
+
+      {/* Slideshow Section */}
+      <div
+        className="relative bg-cover bg-center h-screen text-white flex items-center justify-center transition-all duration-1000"
         style={{
           backgroundImage: `url(${images[currentImageIndex].src})`,
         }}
@@ -37,7 +50,7 @@ export default function AboutPreparation() {
       {/* Description Section */}
       <div className="container mx-auto px-6 py-16">
         <p className="text-xl text-center text-gray-700 mb-12 leading-relaxed">
-          Clean eating can be simple, yet nourishing. A mindful approach that enhances traditional recipes with healthier options.
+          Haat Bazar, the heart of Kalimpong, offers local seasonal produce year-round, reflecting the region's rich harvest and cultural harmony.
         </p>
       </div>
 
@@ -52,7 +65,7 @@ export default function AboutPreparation() {
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-72 object-cover"
+                className="w-full h-[500px] object-cover"
               />
               <p className="text-center text-gray-700 font-medium mt-4">{image.alt}</p>
             </div>
