@@ -9,9 +9,13 @@ const app = express();
 // Middleware to parse JSON
 app.use(express.json());
 
-// Enable CORS if your frontend is on a different port/domain
+// Enable CORS with specific origin
 const cors = require('cors');
-app.use(cors());
+app.use(cors({
+  origin: ['https://aldrin-cse-7-nutrilite.vercel.app/'], // Replace with your actual Vercel frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  credentials: true, // Allow cookies if needed
+}));
 
 // Routes
 app.use('/api/auth', authRoutes);
