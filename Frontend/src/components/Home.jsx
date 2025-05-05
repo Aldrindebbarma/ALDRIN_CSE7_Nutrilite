@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function HeroSection() {
   return (
@@ -21,16 +21,21 @@ export default function HeroSection() {
             Fresh, Hot, and Delicious Food
           </h1>
           <p className="text-lg md:text-2xl text-center mb-8 max-w-3xl">
-            Experience the best flavors delivered straight to your door in under 20 minutes. 
-            Open daily from 10:00 AM to 7:00 PM. Call us at <span className="font-bold">8-800-100-10-20</span>.
+            Experience the best flavors delivered straight to your table in
+            under 20 minutes. Open daily from 10:00 AM to 7:00 PM. Call us at{" "}
+            <span className="font-bold">8-800-100-10-20</span>.
           </p>
           <div className="flex flex-col md:flex-row gap-4">
-            <button className="bg-green-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition">
-              Order Now
-            </button>
-            <button className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition">
-              View Menu
-            </button>
+            <a href="/services">
+              <button className="bg-green-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-600 transition">
+                Order Now
+              </button>
+            </a>
+            <a href="/pizza">
+              <button className="bg-transparent border border-white text-white font-bold py-3 px-8 rounded-lg hover:bg-white hover:text-black transition">
+                Special Offers
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -42,18 +47,19 @@ export default function HeroSection() {
             Business Lunch
           </h2>
           <div className="flex flex-col md:flex-row items-start gap-8">
-            {/* Menu Section */}
+            {/* About Section */}
             <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-4 text-blue-700">Menu</h3>
-              <ul className="space-y-3 text-xl text-red-600">
-                <li>Soup of the Day</li>
-                <li>Grilled Vegetables</li>
-                <li>Chicken Curry</li>
-                <li>Rice or Bread</li>
-                <li>Fresh Juice</li>
-                <li>Seasonal Salad</li>
-                <li>Chocolate Dessert</li>
-              </ul>
+              <h3 className="text-2xl font-bold mb-4 text-blue-700">About</h3>
+              <p className="text-xl text-gray-700">
+                Nutilite was founded in 2015, driven by their shared passion for
+                food, culture.Thetravels have deeply influenced the cafe,
+                with each experience serving as inspiration for the atmosphere
+                and flavors reflected in everything offered at Nutilite. Our
+                business lunch service offers a carefully crafted meal
+                experience that blends fresh ingredients with expert
+                preparation. Designed for busy professionals, our menu ensures
+                you enjoy a nutritious and satisfying break.
+              </p>
             </div>
 
             {/* Image Section */}
@@ -109,7 +115,9 @@ export default function HeroSection() {
                 alt="Chef"
                 className="w-16 h-16 mx-auto mb-4"
               />
-              <h3 className="text-xl font-bold mb-2 text-gray-800">Expert Chefs</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-800">
+                Expert Chefs
+              </h3>
               <p className="text-gray-600">
                 Our chefs are highly skilled and experienced.
               </p>

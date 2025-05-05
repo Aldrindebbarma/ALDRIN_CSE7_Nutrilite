@@ -21,10 +21,9 @@ export default function Header() {
         <button onClick={handleHomeClick} className="hover:text-green-500">
           Home
         </button>
-        <Link to="/services" className="hover:text-green-500">Menu</Link> {/* Navigate to Services */}
-        <Link to="/pizza" className="hover:text-green-500">Special Offers</Link>
         <Link to="/contact" className="hover:text-green-500">Contact Us</Link>
         <Link to="/about-preparation" className="hover:text-green-500">About Preparation</Link> {/* New Link */}
+        <Link to="/login" className="hover:text-green-500">Login</Link> {/* Added Login Link */}
       </nav>
     </header>
   );

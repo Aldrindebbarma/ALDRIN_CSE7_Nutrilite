@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Services() {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
-
   const baseURL = import.meta.env.BASE_URL;
 
   const menuItems = [
@@ -30,20 +29,20 @@ export default function Services() {
   ];
 
   const handleAddToCart = (item) => {
-    const updatedCartItems = cartItems.map((cartItem) =>
-      cartItem.id === item.id
-        ? { ...cartItem, quantity: cartItem.quantity + 1 }
-        : cartItem
-    );
-
-    if (!cartItems.some((cartItem) => cartItem.id === item.id)) {
+    // If the item already exists in the cart, increment the quantity.
+    let updatedCartItems = [...cartItems];
+    const index = updatedCartItems.findIndex((cartItem) => cartItem.id === item.id);
+    if (index !== -1) {
+      updatedCartItems[index].quantity += 1;
+    } else {
       updatedCartItems.push({ ...item, quantity: 1 });
     }
-
     setCartItems(updatedCartItems);
+  };
 
-    // Navigate to the cart with updated items
-    navigate('/cart', { state: { cartItems: updatedCartItems } });
+  const handleCheckout = () => {
+    // Navigate to the Cart page and pass the current cartItems via state.
+    navigate('/cart', { state: { cartItems } });
   };
 
   return (
@@ -75,6 +74,19 @@ export default function Services() {
           ))}
         </div>
       </section>
+
+      {/* Checkout button: enabled only if the cart has items */}
+      <div className="text-center">
+        <button
+          onClick={handleCheckout}
+          disabled={cartItems.length === 0}
+          className={`mt-4 bg-blue-600 text-white text-lg font-bold py-2 px-4 rounded ${
+            cartItems.length === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'
+          }`}
+        >
+          Checkout
+        </button>
+      </div>
     </div>
   );
 }

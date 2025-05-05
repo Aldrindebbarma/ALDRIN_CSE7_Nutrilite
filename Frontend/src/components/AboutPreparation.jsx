@@ -4,7 +4,7 @@ export default function AboutPreparation() {
   const images = [
     { src: '/Images/Food/Salad.jpg', alt: 'Farm to Table' },
     { src: '/Images/Food/Rice.jpg', alt: 'Rice Paddy' },
-    { src: '/Images/Food/Market.jpg', alt: 'Haat Bazar Main' },
+    { src: '/Images/Food/Market.jpg', alt: 'Market' },
     { src: '/Images/Food/Pizza Base.jpg', alt: 'Pizza Base' },
     { src: '/Images/Food/Pasta.jpg', alt: 'To the Table' },
   ];
@@ -24,9 +24,7 @@ export default function AboutPreparation() {
       {/* Static Hero Section */}
       <div
         className="relative bg-cover bg-center h-screen text-white flex items-center justify-center"
-        style={{
-          backgroundImage: "url('/Images/Food/Farm.jpg')",
-        }}
+        style={{ backgroundImage: "url('/Images/Food/Farm.jpg')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <h1 className="relative text-6xl font-bold uppercase tracking-wide text-center">
@@ -37,9 +35,7 @@ export default function AboutPreparation() {
       {/* Slideshow Section */}
       <div
         className="relative bg-cover bg-center h-screen text-white flex items-center justify-center transition-all duration-1000"
-        style={{
-          backgroundImage: `url(${images[currentImageIndex].src})`,
-        }}
+        style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <h1 className="relative text-6xl font-bold text-center uppercase tracking-wide">
@@ -50,28 +46,21 @@ export default function AboutPreparation() {
       {/* Description Section */}
       <div className="container mx-auto px-6 py-16">
         <p className="text-xl text-center text-gray-700 mb-12 leading-relaxed">
-          Haat Bazar, the heart of Kalimpong, offers local seasonal produce year-round, reflecting the region's rich harvest and cultural harmony.
+          Clean eating can be simple, yet nourishing. A mindful approach that enhances traditional recipes with healthier options.
         </p>
       </div>
 
-      {/* Food Preparation Images */}
-      <div className="container mx-auto px-6 py-16">
-        <h2 className="text-4xl font-bold text-center text-green-600 mb-12 uppercase">
-          Food Preparation in Action
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {images.map((image, index) => (
-            <div key={index} className="rounded-lg shadow-lg overflow-hidden">
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-[500px] object-cover"
-              />
-              <p className="text-center text-gray-700 font-medium mt-4">{image.alt}</p>
-            </div>
-          ))}
+      {/* Footer Section */}
+      <footer className="bg-gray-800 text-white py-6">
+        <div className="container mx-auto text-center">
+          <p className="text-sm">
+            © {new Date().getFullYear()} Nutrilite. All rights reserved.
+          </p>
+          <p className="text-sm mt-2">
+            Designed with care and passion for healthy living.
+          </p>
         </div>
-      </div>
+      </footer>
     </div>
   );
 }
