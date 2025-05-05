@@ -1,21 +1,31 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-import menuRoutes from './routes/menuRoutes.js';
-import orderRoutes from './routes/orderRoutes.js';
-import { sequelize } from './models/index.js';
+const express = require('express');
+const sequelize = require('./config/db');
+const authRoutes = require('./routes/auth');
+const paymentRoutes = require('./routes/payment');  // Import payment routes
+require('dotenv').config();
 
-dotenv.config();
 const app = express();
-app.use(cors());
+
+// Middleware to parse JSON
 app.use(express.json());
 
-app.use('/api/menu', menuRoutes);
-app.use('/api/orders', orderRoutes);
+// Enable CORS if your frontend is on a different port/domain
+const cors = require('cors');
+app.use(cors());
 
-sequelize.authenticate()
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/payment', paymentRoutes);  // Mount payment routes
+
+// Sync database and start server
+sequelize
+  .sync()
   .then(() => {
     console.log('Database connected');
-    app.listen(5000, () => console.log('Server running on port 5000'));
+    app.listen(5000, () => {
+      console.log('Server running on port 5000');
+    });
   })
-  .catch(err => console.error('Unable to connect:', err));
+  .catch((error) => {
+    console.error('Unable to connect to the database:', error);
+  });
