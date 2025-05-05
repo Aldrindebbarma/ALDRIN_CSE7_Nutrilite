@@ -1,7 +1,7 @@
 const express = require('express');
 const sequelize = require('./config/db');
 const authRoutes = require('./routes/auth');
-const paymentRoutes = require('./routes/payment');  // Import payment routes
+const paymentRoutes = require('./routes/payment'); // Import payment routes
 require('dotenv').config();
 
 const app = express();
@@ -15,14 +15,14 @@ app.use(cors());
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/payment', paymentRoutes);  // Mount payment routes
+app.use('/api/payment', paymentRoutes); // Mount payment routes
 
 // Sync database and start server
 sequelize
   .sync()
   .then(() => {
     console.log('Database connected');
-    const PORT = process.env.PORT || 5000;
+    const PORT = process.env.PORT || 5000; // Use dynamic port for deployment
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((error) => {
